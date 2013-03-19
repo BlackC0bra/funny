@@ -8,5 +8,3 @@ str = joke[rand(n)]
 str = str[0].gsub(/<br \/>/){"\n"}
 str = str.gsub(/&quot;/){"\""}
 puts str
-
-#puts joke.gsub(/<br \/>/){"\n"}
