@@ -1,5 +1,4 @@
 require 'open-uri'
-require 'iconv'
 url = 'http://www.anekdot.ru/scripts/rand_anekdot.php'
 page = open(url)
 text = page.read
@@ -8,6 +7,4 @@ n = joke.length
 str = joke[rand(n)]
 str = str[0].gsub(/<br \/>/){"\n"}
 str = str.gsub(/&quot;/){"\""}
-ic = Iconv.new('UTF-8','WINDOWS-1251')
-convertedstr = ic.iconv(str)
-puts convertedstr
+puts str.encode('UTF-8')
